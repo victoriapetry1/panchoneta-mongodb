@@ -139,7 +139,7 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 - Entrypoint: python3 manage.py
 - Ideal para migraciones, superusuario, etc.
 - Depende de: db (espera a que esté saludable)
-              mongo
+- Depende de: mongo
 
 
 
