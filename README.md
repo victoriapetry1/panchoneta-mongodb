@@ -114,9 +114,9 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 
 ### 2. `mongo`
 > Contenedor de Mongo.
--Imagen: mongo:7
--Volumen persistente: mongo-data:/data/db
--Variables de entorno: definidas en .env.db
+- Imagen: mongo:7
+- Volumen persistente: mongo-data:/data/db
+- Variables de entorno: definidas en .env.db
 
   
 ### 3. `backend`
