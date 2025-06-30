@@ -48,7 +48,7 @@ Este proyecto tiene como finalidad aplicar los contenidos vistos en la Cátedra 
 ### 1. Clonar el repositorio
 > *Puedes copiar todo este bloque y pegarlo directamente en tu terminal.*
 sh
-git clone 
+git clone https://github.com/victoriapetry1/panchoneta-mongodb.git
 
 ### 2. Configuración de Variables de Entorno
 En el archivo .env.db utilizado para almacenar las variables de entorno necesarias para la conexión a la base de datos configurarlo de la siguiente manera:
@@ -57,6 +57,7 @@ En el archivo .env.db utilizado para almacenar las variables de entorno necesari
 conf
 # .env.db
 # .env.db
+# Postgres
 DATABASE_ENGINE=django.db.backends.postgresql
 POSTGRES_HOST=db
 POSTGRES_PORT=5432
@@ -67,16 +68,33 @@ POSTGRES_PASSWORD=postgres
 LANG=es_AR.utf8
 POSTGRES_INITDB_ARGS="--locale-provider=icu --icu-locale=es-AR --auth-local=trust"
 
+# MongoDB
+MONGO_DB=panchoneta
+MONGO_URI=mongodb://root:example@mongo:27017/panchoneta
+MONGO_USER=root
+MONGO_PASS=example
+
+# Django
+SECRET_KEY=clave-insegura-para-dev
+DEBUG=True
+ALLOWED_HOSTS=*
+
 
 ### 3. Levantar el proyecto
-Desde la terminal levantar el proyecto con el siguiente comando
-> *Windows*
-txt
-./init.ps1
+Desde la terminal levantar el proyecto con los siguiente comando
 
-> *Linux*
-txt
-. init.sh
+-docker-compose up --build (si aun no se levanto el proyecto)
+
+-docker-compose run --rm manage makemigrations (genera archivos de migraciones a partit de los modelos)
+-docker-compose run --rm manage migrate (realiza migraciones en postgres)
+
+-docker-compose run --rm manage createsuperuser(si aún no se creo)
+
+Para hacer la carga de datos a las base de batos con los siguiente comando
+
+-docker-compose run --rm manage loaddata initial_data (archivo json para inicializar los datos con djjango en postgres)
+-python manage.py shell (abrir la terminal para cargar los datos a mongodb)
+-exec(open("initial_loader.py", encoding="utf-8").read()) (realiza la carga de los datos a mongodb con el archivo initial_loader)
 
 
 ### 4. Acceso a La Panchoneta
@@ -92,12 +110,20 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 - Variables de entorno: definidas en .env.db
 - Healthcheck incluido (espera a que el servicio esté listo)
 
+> Contenedor de Mongo.
+-Imagen: mongo:7
+-Volumen persistente: mongo-data:/data/db
+-Variables de entorno: definidas en .env.db
+
+  
 ### 2. backend
 > Servidor de desarrollo Django.
 - Comando: python3 manage.py runserver 0.0.0.0:8000
 - Puerto expuesto: 8000
 - Código montado desde ./src
 - Depende de: db (espera a que esté saludable)
+              mongo
+
 
 ### 3. generate
 > Servicio opcional para crear el proyecto Django si no existe.
@@ -109,6 +135,8 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 > Ejecuta comandos manage.py desde Docker.
 - Entrypoint: python3 manage.py
 - Ideal para migraciones, superusuario, etc.
+- Depende de: db (espera a que esté saludable)
+              mongo
 
 
 
