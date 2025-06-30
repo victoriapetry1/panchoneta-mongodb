@@ -11,6 +11,7 @@ Práctico de Mapeo Objeto-Relacional para la materia, Bases de Datos de la carre
 ![Mongo 7](https://img.shields.io/badge/MongoDB%207-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Mongoengine 0.29](https://img.shields.io/badge/MongoEngine%200.29-4FAA41?style=for-the-badge&logo=python&logoColor=white)
 ![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white)
+![MongoCompass](https://img.shields.io/badge/MongoDB%20Compass-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
 
 *Referencia Rápida*
