@@ -56,6 +56,7 @@ En el archivo .env.db utilizado para almacenar las variables de entorno necesari
 > *Puedes copiar todo este bloque y pegarlo directamente en tu archivo .env.db.*
 conf
 # .env.db
+# .env.db
 
 DATABASE_ENGINE=django.db.backends.postgresql
 POSTGRES_HOST=db
