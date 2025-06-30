@@ -112,13 +112,14 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 - Variables de entorno: definidas en .env.db
 - Healthcheck incluido (espera a que el servicio esté listo)
 
+### 2. `mongo`
 > Contenedor de Mongo.
 -Imagen: mongo:7
 -Volumen persistente: mongo-data:/data/db
 -Variables de entorno: definidas en .env.db
 
   
-### 2. `backend`
+### 3. `backend`
 > Servidor de desarrollo Django.
 - Comando: python3 manage.py runserver 0.0.0.0:8000
 - Puerto expuesto: 8000
