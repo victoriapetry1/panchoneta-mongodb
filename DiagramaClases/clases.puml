@@ -1,0 +1,60 @@
+@startuml PANCHONETA
+hide circle
+skinparam style strictuml
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Venta {
+    fecha
+    hora 
+    sucursal: Sucursal 
+    detalles_panchos: DetalleVentaPancho
+    detalles_bebidas: DetalleVentaBebida
+
+    calcular_total()
+}
+
+class DetalleVentaPancho {
+    pancho: Pancho
+    cantidad
+    subtotal()
+}
+
+class DetalleVentaBebida {
+    bebida: Bebida 
+    cantidad
+    subtotal()
+}
+
+class Pancho {
+    nombre 
+    precio
+    salsa: Salsa 
+}
+
+class Bebida {
+    nombre
+    precio
+}
+
+class Salsa {
+    nombre
+    descripcion
+}
+
+class Sucursal {
+    nombre 
+    calle 
+    nroCalle
+    piso
+}
+
+Venta o--> "0..*" DetalleVentaPancho
+Venta o--> "0..*" DetalleVentaBebida
+Venta --> "1" Sucursal
+
+DetalleVentaPancho --> "1" Pancho
+DetalleVentaBebida --> "1" Bebida
+Pancho --> "0..3" Salsa
+
+@enduml
