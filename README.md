@@ -1,5 +1,3 @@
-# panchoneta-mongodb
-
 # Tutorial: Despliegue de "La Panchoneta" en Django con Docker + mongodb v2
 Práctico de Mapeo Objeto-Relacional para la materia, Bases de Datos de la carrera Ingeniería en Sistemas de la Universidad Tecnológica Nacional Facultad Regional Villa María.
 
