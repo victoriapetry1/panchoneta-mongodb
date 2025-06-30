@@ -54,7 +54,7 @@ git clone https://github.com/victoriapetry1/panchoneta-mongodb.git
 En el archivo .env.db utilizado para almacenar las variables de entorno necesarias para la conexión a la base de datos configurarlo de la siguiente manera:
 
 > *Puedes copiar todo este bloque y pegarlo directamente en tu archivo .env.db.*
-conf
+```conf
 # .env.db
 # .env.db
 
@@ -78,7 +78,7 @@ MONGO_PASS=example
 SECRET_KEY=clave-insegura-para-dev
 DEBUG=True
 ALLOWED_HOSTS=*
-
+```
 
 ### 3. Levantar el proyecto
 Desde la terminal levantar el proyecto con los siguiente comando
