@@ -35,11 +35,12 @@ Este proyecto tiene como finalidad aplicar los contenidos vistos en la Cátedra 
 
 ## Requisitos Previos
 - *Docker* y *Docker Compose* instalados en tu sistema. Puedes consultar la [documentación oficial de Docker](https://docs.docker.com/get-docker/) para la instalación.
-- Conocimientos básicos de Python y Django (no excluyente, el tutorial es autoexplicativo).
+- Conocimientos básicos de Python, Django y mongodb (no excluyente, el tutorial es autoexplicativo).
 
 ### Recursos Útiles
 - [Tutorial oficial de Django](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
 - [Cómo crear un entorno virtual en Python](https://docs.djangoproject.com/en/2.0/intro/contributing/)
+- [Iniciar en mongodb](https://www.mongodb.com/docs/manual/tutorial/getting-started/)
 
 ---
 ## *Instrucciones de para levantar el proyecto*
@@ -47,8 +48,7 @@ Este proyecto tiene como finalidad aplicar los contenidos vistos en la Cátedra 
 ### 1. Clonar el repositorio
 > *Puedes copiar todo este bloque y pegarlo directamente en tu terminal.*
 sh
-git clone https://github.com/milipereyra/panchoneta-django
-
+git clone 
 
 ### 2. Configuración de Variables de Entorno
 En el archivo .env.db utilizado para almacenar las variables de entorno necesarias para la conexión a la base de datos configurarlo de la siguiente manera:
