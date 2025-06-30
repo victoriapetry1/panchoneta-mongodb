@@ -84,7 +84,8 @@ Desde la terminal levantar el proyecto con los siguiente comando
 ```txt
 -docker-compose up --build (si aun no se levanto el proyecto)
 
--docker-compose run --rm manage makemigrations (genera archivos de migraciones a partit de los modelos)
+-docker-compose run --rm manage makemigrations (genera archivos de migraciones a partir de los modelos)
+
 -docker-compose run --rm manage migrate (realiza migraciones en postgres)
 
 -docker-compose run --rm manage createsuperuser(si aún no se creo)
