@@ -88,11 +88,13 @@ Desde la terminal levantar el proyecto con los siguiente comando
 -docker-compose run --rm manage migrate (realiza migraciones en postgres)
 
 -docker-compose run --rm manage createsuperuser(si aún no se creo)
-
+```
 Para hacer la carga de datos a las base de batos con los siguiente comando
-
+```txt
 -docker-compose run --rm manage loaddata initial_data (archivo json para inicializar los datos con djjango en postgres)
+
 -python manage.py shell (abrir la terminal para cargar los datos a mongodb)
+
 -exec(open("initial_loader.py", encoding="utf-8").read()) (realiza la carga de los datos a mongodb con el archivo initial_loader)
 ```
 
