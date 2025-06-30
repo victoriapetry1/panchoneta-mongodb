@@ -16,8 +16,8 @@ Práctico de Mapeo Objeto-Relacional para la materia, Bases de Datos de la carre
 
 *Referencia Rápida*
 
-## *Mantenido por Grupo 09*
-### *Integrantes:*
+## **Mantenido por Grupo 09**
+### **Integrantes:**
 - Maggi, Mateo David.
 - Pereyra Argüello, Milagros.
 - Petry, Victoria.
@@ -25,7 +25,7 @@ Práctico de Mapeo Objeto-Relacional para la materia, Bases de Datos de la carre
 - Urzagaste, Karen.
 - Zandrino, Felipe.
 
-## *Descargo de Responsabilidad:*
+## **Descargo de Responsabilidad:**
 El código proporcionado se ofrece "tal cual", sin garantía de ningún tipo, expresa o implícita. En ningún caso los autores o titulares de derechos de autor serán responsables de cualquier reclamo, daño u otra responsabilidad.
 
 ## Introducción
@@ -43,12 +43,13 @@ Este proyecto tiene como finalidad aplicar los contenidos vistos en la Cátedra 
 - [Iniciar en mongodb](https://www.mongodb.com/docs/manual/tutorial/getting-started/)
 
 ---
-## *Instrucciones de para levantar el proyecto*
+## **Instrucciones de para levantar el proyecto**
 
 ### 1. Clonar el repositorio
 > *Puedes copiar todo este bloque y pegarlo directamente en tu terminal.*
-sh
+```sh
 git clone https://github.com/victoriapetry1/panchoneta-mongodb.git
+```
 
 ### 2. Configuración de Variables de Entorno
 En el archivo .env.db utilizado para almacenar las variables de entorno necesarias para la conexión a la base de datos configurarlo de la siguiente manera:
@@ -82,7 +83,7 @@ ALLOWED_HOSTS=*
 
 ### 3. Levantar el proyecto
 Desde la terminal levantar el proyecto con los siguiente comando
-
+```txt
 -docker-compose up --build (si aun no se levanto el proyecto)
 
 -docker-compose run --rm manage makemigrations (genera archivos de migraciones a partit de los modelos)
@@ -95,15 +96,15 @@ Para hacer la carga de datos a las base de batos con los siguiente comando
 -docker-compose run --rm manage loaddata initial_data (archivo json para inicializar los datos con djjango en postgres)
 -python manage.py shell (abrir la terminal para cargar los datos a mongodb)
 -exec(open("initial_loader.py", encoding="utf-8").read()) (realiza la carga de los datos a mongodb con el archivo initial_loader)
-
+```
 
 ### 4. Acceso a La Panchoneta
 Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 
 ---
 
-## *Servicios Definidos en Docker Compose*
-### 1. db
+## **Servicios Definidos en Docker Compose**
+### 1. `db`
 > Contenedor de PostgreSQL.
 - Imagen: postgres:alpine
 - Volumen persistente: postgres-db
@@ -116,7 +117,7 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 -Variables de entorno: definidas en .env.db
 
   
-### 2. backend
+### 2. `backend`
 > Servidor de desarrollo Django.
 - Comando: python3 manage.py runserver 0.0.0.0:8000
 - Puerto expuesto: 8000
@@ -125,13 +126,13 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
               mongo
 
 
-### 3. generate
+### 3. `generate`
 > Servicio opcional para crear el proyecto Django si no existe.
 - Ejecuta: django-admin startproject app src
 - Útil al iniciar el proyecto por primera vez
 - Usa permisos de root para crear carpetas
 
-### 4. manage
+### 4. `manage`
 > Ejecuta comandos manage.py desde Docker.
 - Entrypoint: python3 manage.py
 - Ideal para migraciones, superusuario, etc.
@@ -141,8 +142,8 @@ Accede a la administración de DJango en http://localhost:8000/admin/panchoneta
 
 
 ---
-## *Estructura del Proyecto: "La Panchoneta"*
-
+## **Estructura del Proyecto: "La Panchoneta"**
+```
 PANCHONETA/
 ├── DiagramaClases
 │ └── clases.puml # Diagrama de clases realizado en PlantUML
@@ -168,3 +169,4 @@ PANCHONETA/
 ├── init.sh # Script de inicio rápido (bash)
 ├── init.ps1 # Script de inicio rápido (PowerShell)
 └── README.md # Documentación del proyecto
+```
